@@ -1,6 +1,7 @@
 # GREEN-API Chat (Тестовое задание)
-**Live Demo:** https://green-api-chat-sigma.vercel.app/
-> *Примечание: хостинг Vercel может быть недоступен при подключении из некоторых регионов РФ без использования VPN. Это ограничение сети, а не работы приложения.*
+**Live Demo:** https://syndicate13.github.io/green-api-chat/
+
+**Repo:** https://github.com/syndicate13/green-api-chat.git
 
 Пользовательский интерфейс для отправки и получения текстовых сообщений в мессенджере MAX через сервис [GREEN-API](https://green-api.com/).
 
