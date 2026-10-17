@@ -1,0 +1,49 @@
+@use '../../styles/typography' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 40rem;
+  padding: 3.2rem;
+  background: var(--bg-surface);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.title {
+  margin: 0 0 0.8rem;
+  text-align: center;
+  color: var(--text-primary);
+  @include text_20;
+}
+
+.submit {
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  background: var(--accent);
+  color: var(--text-inverse);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+
+  @include text_15;
+
+  &:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  margin: 0;
+  text-align: center;
+  color: var(--error);
+  @include text_13;
+}

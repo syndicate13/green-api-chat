@@ -1,0 +1,41 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/typography' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label {
+  color: var(--text-secondary);
+  @include text_14;
+}
+
+.input {
+  padding: 1rem 1.2rem;
+  border: 0.1rem solid var(--border);
+  border-radius: 0.8rem;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+
+  @include text_14;
+  @include placeholder {
+    color: var(--text-muted);
+  }
+
+  &:focus {
+    border-color: var(--accent);
+  }
+}
+
+.inputError {
+  border-color: var(--error);
+
+  &:focus {
+    border-color: var(--error);
+  }
+}

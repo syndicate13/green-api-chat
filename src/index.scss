@@ -1,0 +1,70 @@
+@use './styles/mixins' as *;
+@use './styles/typography' as *;
+
+:root {
+  font-family:
+    'Roboto',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+
+  // Основные цвета (из дампа MAX)
+  --bg-primary: #fff;
+  --bg-surface: #edeef2;
+  --bg-secondary: #f5f7fa;
+  --bg-tertiary: #0909090d;
+
+  --text-primary: #060708;
+  --text-secondary: #060708ad;
+  --text-tertiary: #06070885;
+  --text-muted: #06070866;
+
+  --states-button-ghost-hover: #0d0d0d0a;
+
+  --border: #0c0d0e29;
+  --border-light: #0c0d0e0f;
+
+  // Акценты
+  --accent: #007aff;
+  --accent-hover: #479fff;
+  --error: #ff303c;
+
+  // Пузыри
+  --bubble-mine: #007aff;
+  --bubble-mine-text: #ffffff;
+  --bubble-other: #ffffff;
+  --bubble-other-text: #060708;
+  --meta-mine: #ffffffad;
+  --meta-other: #06070866;
+
+  // Чат
+  --chat-bg: #edeef2;
+  --chat-bg-pattern: #007aff4d;
+  --chat-background-background-step-1: #99d5d7;
+  --chat-background-background-step-2: #80bcff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%; /* 1rem = 10px */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  @include text_16;
+}
+
+#root {
+  height: 100%;
+}

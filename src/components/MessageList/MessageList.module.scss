@@ -1,0 +1,23 @@
+@use '../../styles/typography' as *;
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.2rem 1.6rem;
+  overflow-y: auto;
+  max-width: 70rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  @include text_14;
+}

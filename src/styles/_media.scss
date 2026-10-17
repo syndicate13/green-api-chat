@@ -1,0 +1,83 @@
+@use 'sass:map';
+// Define breakpoints
+$breakpoints: (
+  xs: 0,
+  // small phones, e.g. iPhone SE with 375px
+  sm: 376px,
+  // big phones
+  mds: 568px,
+  // big phones
+  md: 768px,
+  // tablet
+  lg: 993px,
+  // laptop
+  xl: 1320px,
+  // desktop
+  xxl: 1920px,
+  // 4k
+);
+
+// Mixin to generate up media queries
+@mixin up($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Mixin to generate down media queries
+@mixin down($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint) - 1) {
+      @content;
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Mixin to generate between media queries
+@mixin between($breakpointStart, $breakpointEnd) {
+  @if map.has-key($breakpoints, $breakpointStart) and map.has-key($breakpoints, $breakpointEnd) {
+    @media (min-width: map.get($breakpoints, $breakpointStart)) and (max-width: map.get($breakpoints, $breakpointEnd) - 1) {
+      @content;
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpointStart} or #{$breakpointEnd}.';
+  }
+}
+
+@mixin only($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @if $breakpoint == xs {
+      @media (max-width: map.get($breakpoints, sm) - 1) {
+        @content;
+      }
+    } @else if $breakpoint == sm {
+      @media (min-width: map.get($breakpoints, sm)) and (max-width: map.get($breakpoints, md) - 1) {
+        @content;
+      }
+    } @else if $breakpoint == md {
+      @media (min-width: map.get($breakpoints, md)) and (max-width: map.get($breakpoints, lg) - 1) {
+        @content;
+      }
+    } @else if $breakpoint == lg {
+      @media (min-width: map.get($breakpoints, lg)) and (max-width: map.get($breakpoints, xl) - 1) {
+        @content;
+      }
+    } @else if $breakpoint == xl {
+      @media (min-width: map.get($breakpoints, xl)) {
+        @content;
+      }
+    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}

@@ -1,0 +1,83 @@
+@use '../../styles/mixins' as *;
+
+.wrapper {
+  padding: 1.2rem 1.6rem;
+  position: relative;
+  max-width: 70rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+  padding: 0.1rem 0.4rem 0.4rem 1.2rem;
+  background: var(--bg-primary);
+  border-radius: 2.4rem;
+}
+
+.attachButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 4rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--text-secondary);
+  }
+}
+
+.textarea {
+  flex: 1;
+  resize: none;
+  min-height: 4rem;
+  max-height: 12rem;
+  padding: 1rem 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  overflow-y: auto;
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.sendButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  @include hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
