@@ -39,7 +39,6 @@ export const MessageInput = ({ onSend, disabled }: Props) => {
   return (
     <div className={styles.wrapper}>
       <form className={styles.inputContainer} onSubmit={handleSubmit}>
-        {/* Кнопка плюс/скрепка */}
         <button type="button" className={styles.attachButton} tabIndex={-1}>
           <svg width="24" height="24" viewBox="0 0 126.04 108.78">
             <g>
